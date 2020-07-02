@@ -1,0 +1,40 @@
+
+Python version used: 3.7.3 64-bit
+
+Rename project name:
+    rename "BaseProject" folder
+    cd docs/source
+    open index.rst
+    rename "BaseProject" for the new project name.
+
+Init Project:
+    python -m venv venv
+    source activate venv
+    cd requirements
+    pip install requirements.txt
+    cd ..
+
+Add new files to the documentation:
+    cd docs/source
+    open index.rst
+    
+    add the code below and change "Example File" to description of your file and "BaseProject.example" for the path of your file.
+
+    Example File
+    ===================
+    .. automodule:: BaseProject.example
+    :members:
+
+docstring documentation:
+    https://www.sphinx-doc.org/en/1.8/usage/extensions/autodoc.html
+
+
+Generate the documentation:
+    cd docs
+    make html
+    sphinx-build -b rinoh source _build/base
+
+In the end of the project freeze the requirements:
+    cd requirements
+    pip freeze > requirements.txt
+    add the python version on "version.txt"
